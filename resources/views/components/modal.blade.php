@@ -52,11 +52,17 @@
                             <label for="formGroupExampleInput2" class="form-label">Email:</label>
                             <input type="text" class="form-control" id="formGroupExampleInput2" name="email"
                                 placeholder="email@email.com" x-model="user.email">
+                            <template x-if="errors.email">
+                                <span class="text-danger" x-text="errors.email[0]"></span>
+                            </template>
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput2" class="form-label">Senha:</label>
                             <input type="text" class="form-control" id="formGroupExampleInput2" name="password"
                                 x-model="user.password">
+                            <template x-if="errors.password">
+                                <span class="text-danger" x-text="errors.password[0]"></span>
+                            </template>
                         </div>
                     </div>
                     <div class="modal-footer">
