@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/users', [UserController::class, 'show']);
 Route::post('/users', [UserController::class, 'create']);
+Route::put('/users/update/{id}', [UserController::class, 'update']);
 

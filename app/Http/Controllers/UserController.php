@@ -32,5 +32,42 @@ class UserController extends Controller
 
             ], 400);
         }
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return response()->json([
+            "success" => "Usuário criado com sucesso!"
+        ], 201);
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $validar = Validator::make(request()->all(), [
+            'name' => 'required|min:5',
+            'email' => 'required|email',
+        ]);
+
+
+        if ($validar->fails()) {
+            return response()->json([
+                "errors" => $validar->errors()->getMessages(),
+
+            ], 400);
+        }
+
+
+        $user = User::findOrfail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+
+        return response()->json([
+            "success" => "Usuário atualizado com sucesso!"
+        ], 201);
     }
 }

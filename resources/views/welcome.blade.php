@@ -8,10 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" id="__token">
 
     <title>Laravel com Alpine</title>
-    
-    {{-- AlpineJS --}}
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    {{-- AlpineJS --}}
+    @vite('resources/js/app.js')
     {{-- Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
