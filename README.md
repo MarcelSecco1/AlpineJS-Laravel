@@ -34,7 +34,7 @@ composer install
 npm install
 ```
 
-Execute o script dev do npm:
+Execute o script dev:
 ```bash
  npm run dev
 ```
