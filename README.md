@@ -33,22 +33,28 @@ composer install
 npm install
 ```
 
-Execute o script dev:
+Inicie seus containers:
 
 ```bash
- npm run dev
+ docker compose up -d
 ```
 
 Por fim copia o .env.example para o .env e gere a key do Laravel:
 
 ```bash
  copy .env.example .env
- php artisan key:generate
+ docker compose exec app php artisan key:generate
 ```
 
-Agora basta só inicializar o server do Laravel e rodar as migrations:
+Rode as migrations:
 
 ```bash
- php artisan migrate
- php artisan server
+ docker compose exec app php artisan migrate
 ```
+
+Execute o script dev:
+```bash
+ npm run dev
+```
+
+Seu projeto estará disponível na em [http://localhost:8989](http://localhost:8989)
